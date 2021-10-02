@@ -21,10 +21,10 @@ INCLUDES = -I$(USER_DIR) -I.
 # Flags passed to the preprocessor.
 # Set Google Test's header directory as a system directory, such that
 # the compiler doesn't generate warnings in Google Test headers.
-CPPFLAGS += -isystem $(GTEST_DIR)/include -Wno-error -DKAYSUN_AC -DDANBY_DAC -D_IR_LOCALE_=en-AU
+CPPFLAGS += -isystem $(GTEST_DIR)/include -D_IR_LOCALE_=en-AU -Wno-error
 
 # Flags passed to the C++ compiler.
-CXXFLAGS += -g -Wall -Wextra -Werror -pthread -std=gnu++11
+CXXFLAGS += -g -Wall -Wextra -pthread -std=gnu++11 -Wno-error
 
 # All tests produced by this Makefile. generated from all *_test.cpp files
 TESTS = $(patsubst %.cpp,%,$(wildcard *_test.cpp))
